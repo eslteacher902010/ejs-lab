@@ -1,0 +1,20 @@
+<%- include('./partials/nav') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title><%= category %></title>
+</head>
+<body>
+    <h1><%= category %></h1>
+  <% menuItems.forEach((item, index)=>{ %>
+      <a href="/<%= index %>">
+        <li>
+          <%= item.name %>: <%= item.price %>: <%= item.rating %> : <%= item.details %>
+        </li>
+      </a>
+    <% }) %>
+</body>
+</html>

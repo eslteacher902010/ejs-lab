@@ -1,0 +1,21 @@
+  <%- include('./partials/nav') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= item.name %></title>
+</head>
+<body>
+    <h1 style=color:springgreen>introducing.....</h1>
+  <h1><%= item.name %></h1>
+  <p><strong>Category:</strong> <%= item.category %></p>
+  <p><strong>Price:</strong> $<%= item.price %></p>
+  <p><strong>Rating:</strong> 
+  <% if (item.rating === 5) { %> 💥 <% } %> 
+  <%= item.rating %> <%= "⭐".repeat(item.rating) %></p>
+  <p><%= item.details %></p>
+
+  <p><a href="/menu">← Back to Full Menu</a></p>
+</body>
+</html>

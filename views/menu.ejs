@@ -1,0 +1,69 @@
+<%- include('./partials/nav') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <h1>Full Menu</h1>
+
+<h2>Mains</h2>
+<ul>
+  <% menu.forEach(item => { %>
+    <% if (item.category === "mains") { %>
+      <li>
+        <a href="/menu/item/<%= item.id %>">
+          <%= item.name %>: $<%= item.price %> : 
+           <% if (item.rating === 5) { %> 💥 <% } %> 
+          <%= item.rating %> <%= "⭐".repeat(item.rating) %>: 
+          <%= item.details %>
+        </a>
+      </li>
+    <% } %>
+  <% }) %>
+</ul>
+
+  <h2>Desserts</h2>
+  
+<ul>
+  <% menu.forEach(item => { %>
+    <% if (item.category === "desserts") { %>
+      <li>
+        <a href="/menu/item/<%= item.id %>">
+          <%= item.name %>: $<%= item.price %>:
+          <% if (item.rating === 5) { %> 💥 <% } %> 
+           <%= item.rating %> <%= "⭐".repeat(item.rating) %>: 
+           <%= item.details %>
+        </a>
+      </li>
+    <% } %>
+  <% }) %>
+</ul>
+
+
+  <h2>Sides</h2>
+  
+  <ul>
+  <% menu.forEach(item => { %>
+    <% if (item.category === "sides") { %>
+      <li>
+        <a href="/menu/item/<%= item.id %>">
+          <%= item.name %>: $<%= item.price %> : 
+          <% if (item.rating === 5) { %> 💥 <% } %> 
+          <%= item.rating %> <%= "⭐".repeat(item.rating) %>: 
+          <%= item.details %> 
+          <!-- //adding a star -->
+        </a>
+      </li>
+    <% } %>
+  <% }) %>
+</ul>
+<!-- name, price, rating and details -->
+
+</body>
+</html>
+
+
+  
